@@ -1,3 +1,4 @@
+#commnet
 resource "azurerm_resource_group" "positive1" {
   name     = "resourceGroup1"
   location = "West US"
