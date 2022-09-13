@@ -27,7 +27,7 @@ resource "aws_s3_bucket" "example" {
 }
 
 
-# Encryption Key
+# Encryption key
 resource "aws_kms_key" "testkey" {
   description             = "This is a test key that is used to encrypt bucket objects"
   deletion_window_in_days = 10
