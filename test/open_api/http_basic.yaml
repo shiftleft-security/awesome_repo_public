@@ -21,6 +21,18 @@ paths:
       operationId: listVersionsv2
       summary: List API versions
       responses:
+        "400":
+          description: 400 status code
+        "401":
+          description: 401 status code
+        "403":
+          description: 403 status code
+        "404":
+          description: 404 status code
+        "429":
+          description: 429 status code
+        "500":
+          description: 500 status code
         "200":
           description: 200 response
           content:
