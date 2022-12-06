@@ -1,2 +1,2 @@
 FROM redis
-EXPOSE 80
+EXPOSE 8080
