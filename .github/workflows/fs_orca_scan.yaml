@@ -8,8 +8,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  iac_scan_job:
-    name: IaC Security Scan
+  fs_scan_job:
+    name: FS Security Scan
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -21,10 +21,10 @@ jobs:
           path: test
           format: sarif
           output: results/
-          console_output: cli
+          console_output: table
           show_annotations: false
       - uses: github/codeql-action/upload-sarif@v2
         if: always()
         with:
           # Path to SARIF file relative to the root of the repository
-          sarif_file: results/iac.sarif
+          sarif_file: results/fs.sarif
