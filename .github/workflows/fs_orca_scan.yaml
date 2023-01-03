@@ -27,4 +27,4 @@ jobs:
         if: always()
         with:
           # Path to SARIF file relative to the root of the repository
-          sarif_file: results/fs.sarif
+          sarif_file: results/file_system.sarif
