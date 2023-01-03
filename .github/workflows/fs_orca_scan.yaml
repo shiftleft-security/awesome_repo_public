@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Scan IaC
-        uses: orcasecurity/shiftleft-fs-action
+        uses: orcasecurity/shiftleft-fs-action@v1
         with:
           api_token: ${{ secrets.ORCA_SECURITY_API_TOKEN }}
           project_key: default
