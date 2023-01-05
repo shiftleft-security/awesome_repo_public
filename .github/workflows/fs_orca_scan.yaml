@@ -20,6 +20,7 @@ jobs:
           project_key: default
           path: test
           output: results/
+          format: sarif
           show_annotations: false
       - uses: github/codeql-action/upload-sarif@v2
         if: always()
