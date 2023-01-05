@@ -28,6 +28,9 @@ jobs:
           api_token: ${{ secrets.ORCA_SECURITY_API_TOKEN }}
           project_key: "default"
           image: base_infra:latest
+          console_output: "table"
+          format: "sarif"
+          
           
     - uses: github/codeql-action/upload-sarif@v2
       if: always()
