@@ -21,7 +21,6 @@ jobs:
           path: test
           format: sarif
           output: results/
-          console_output: table
           show_annotations: false
       - uses: github/codeql-action/upload-sarif@v2
         if: always()
