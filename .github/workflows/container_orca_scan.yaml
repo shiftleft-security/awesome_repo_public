@@ -35,4 +35,4 @@ jobs:
       if: always()
       with:
           # Path to SARIF file relative to the root of the repository
-          sarif_file: results/image.sarif
+          sarif_file: orca_results/image.sarif
