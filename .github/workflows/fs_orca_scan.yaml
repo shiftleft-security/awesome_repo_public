@@ -19,7 +19,6 @@ jobs:
           api_token: ${{ secrets.ORCA_SECURITY_API_TOKEN }}
           project_key: default
           path: test
-          format: sarif
           output: results/
           show_annotations: false
       - uses: github/codeql-action/upload-sarif@v2
