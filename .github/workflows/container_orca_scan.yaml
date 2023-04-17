@@ -1,0 +1,39 @@
+name: Image Scan - Demo pipeline
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+
+  build-and-scan-image:
+    name: build-and-scan-image
+    runs-on: ubuntu-latest
+    env: 
+      IMAGE_NAME: base_infra:latest
+      PROJECT_KEY: default
+      CLI_VERSION: latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build Container Image
+      run: docker build -t ${IMAGE_NAME} .
+
+    - name: Orca Container image Security Scan
+      uses: orcasecurity/shiftleft-container-image-action@v1
+      with:
+          api_token: ${{ secrets.ORCA_SECURITY_API_TOKEN }}
+          project_key: "default"
+          image: base_infra:latest
+          console_output: "table"
+          format: "sarif"
+          
+          
+    - uses: github/codeql-action/upload-sarif@v2
+      if: always()
+      with:
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: orca_results/image.sarif
