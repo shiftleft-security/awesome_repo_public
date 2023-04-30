@@ -10,6 +10,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "sse_example" {
   }
 }
 
+
 # S3 Bucket
 resource "aws_s3_bucket" "example" {
   bucket = "my-tf-test-bucket"
